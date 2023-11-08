@@ -1,0 +1,28 @@
+.myBody{
+   position: relative;
+   top: -100px;
+}
+
+.heading{
+   font-size: 19.124px;
+   color: white;
+   margin-left: 20px;
+   padding-top: 0;
+}
+.heading2{
+   font-size: 19.124px;
+   color: white;
+   margin-left: 20px; 
+   margin-top: 60px;
+   padding-top: 0;
+}
+.newReleases{
+   margin-left: 15px;  
+}
+.newReleases img {
+   border-radius: 3px;
+   margin-left: 5px;
+  height: 136.69px;
+  width: 1000
+}
+ 

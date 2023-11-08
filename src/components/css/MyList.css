@@ -1,0 +1,28 @@
+.listHeading{
+    position: fixed;
+    width: 100%;
+}
+.listHeading.scrolled {
+    background: #141414; /* Change to your desired background color */
+  }
+.myListHeading{
+    font-size: 25.165px;
+    color: white;
+    margin-left: 60px;
+    padding-top: 100px;
+}
+
+
+.listMovies{
+
+    margin-left: 60px;
+    padding-top: 170px;
+    
+}
+.listMovies img{
+    width: 245px;
+    height: 138px;
+    padding-right: 8px;
+    padding-bottom: 60px;
+    border-radius: 3px;
+}

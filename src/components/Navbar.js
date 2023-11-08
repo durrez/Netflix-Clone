@@ -1,5 +1,5 @@
-import React,{useState} from "react";
-import netflixLogo from "../pictures/netflixLogo.png";
+import React, { useState, useEffect } from 'react';
+import netflixLogo from "./pictures/netflixLogo.png";
 import "../components/css/Navbar.css"; // Import the CSS file for styling
 
 export default function Navbar() {
@@ -16,26 +16,42 @@ const toggleSearch = ()=>{
   }
 }
 
+const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10; // Adjust this value as needed
+      setScrolled(isScrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <div>
-      <nav className="navbar">
+    <>
+      <nav className={scrolled ? 'navbar scrolled' : 'navbar'}>
         <div className="logo">
           <img src={netflixLogo} alt="" />
         </div>
 
         <li>
-          <a className="navHome" href="#">
+          <a className="navHome" href="/">
             Home
           </a>
         </li>
         <li>
-          <a href="#">Movies</a>
+          <a href="/movies">Movies</a>
         </li>
         <li>
-          <a href="#">TV Shows</a>
+          <a href="/TvShows">TV Shows</a>
         </li>
         <li>
-          <a className="myList" href="#">MY List</a>
+          <a className="myList" href="/MyList">MY List</a>
         </li>
 
         <div className="navIcons">
@@ -47,9 +63,9 @@ const toggleSearch = ()=>{
           </div>}
          
           
-          <a className="Kids" herf="#">Kids</a>
+          <a className="Kids" herf="/">Kids</a>
         </div>
       </nav>
-    </div>
+    </>
   );
 }
